@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MapChat - Your AI Location Assistant</title>
+    <meta name="description" content="Ask anything about places around you and get instant answers with interactive map results" />
+    <style>
+      /* Custom marker styles */
+      .custom-marker {
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+      }
+      
+      .user-location-marker {
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      }
+      
+      /* Leaflet popup custom styles */
+      .leaflet-popup-content-wrapper {
+        border-radius: 12px !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+      }
+      
+      .leaflet-popup-tip {
+        box-shadow: none !important;
+      }
+      
+      /* Smooth transitions for all interactive elements */
+      * {
+        transition-property: color, background-color, border-color, box-shadow, transform;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 3px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      
+      /* Loading animations */
+      @keyframes pulse {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 1; }
+      }
+      
+      @keyframes ping {
+        75%, 100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+      
+      .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      
+      .animate-ping {
+        animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
