@@ -31,11 +31,11 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
   const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   const placeholders = [
-    "Ask about places, routes, or areas...",
-    "Find the best pizza near me",
-    "Show me quiet coffee shops for work",
-    "Where are the nearest parks?",
-    "Find restaurants open late",
+    "What are you in the mood for?",
+    "Looking for somewhere to eat?",
+    "Need a good coffee spot?",
+    "Want to find something fun to do?",
+    "Where should we go?",
   ];
   
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);

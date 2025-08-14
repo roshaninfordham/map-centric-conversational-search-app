@@ -40,7 +40,7 @@ function App() {
     setSelectedResult(null);
 
     try {
-      const response = await geminiService.processLocationQuery(content, userLocation);
+      const response = await geminiService.processLocationQuery(content, userLocation, messages);
       
       const aiMessage: ChatMessage = {
         id: `ai_${Date.now()}`,
@@ -48,7 +48,11 @@ function App() {
         content: response.response,
         timestamp: new Date(),
         results: response.results,
-        suggestions: response.suggestions
+        suggestions: response.suggestions,
+        context: {
+          searchQuery: content,
+          resultCount: response.results.length
+        }
       };
 
       setMessages(prev => [...prev, aiMessage]);
@@ -58,9 +62,9 @@ function App() {
       const errorMessage: ChatMessage = {
         id: `error_${Date.now()}`,
         type: 'ai',
-        content: "I'm sorry, I'm having trouble processing your request right now. Please try again.",
+        content: "Sorry, I'm having a bit of trouble right now. Could you try asking again?",
         timestamp: new Date(),
-        suggestions: ['Show me restaurants nearby', 'Find coffee shops', 'Where are the parks?']
+        suggestions: ['What restaurants are nearby?', 'Find me coffee shops', 'Show me some parks']
       };
 
       setMessages(prev => [...prev, errorMessage]);

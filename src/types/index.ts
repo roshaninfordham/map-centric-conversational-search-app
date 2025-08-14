@@ -24,6 +24,11 @@ export interface ChatMessage {
   timestamp: Date;
   results?: PlaceResult[];
   suggestions?: string[];
+  context?: {
+    searchQuery?: string;
+    filters?: SearchFilters;
+    resultCount?: number;
+  };
 }
 
 export interface SearchFilters {
@@ -31,4 +36,7 @@ export interface SearchFilters {
   category?: string;
   priceLevel?: number;
   openNow?: boolean;
+  budget?: number;
+  partySize?: number;
+  specificRequirements?: string[];
 }

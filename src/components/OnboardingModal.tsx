@@ -11,18 +11,18 @@ export const OnboardingModal: React.FC<OnboardingModalProps> = ({ isOpen, onClos
   const steps = [
     {
       icon: MessageSquare,
-      title: "Ask Anything",
-      description: "Type or speak your question about places, routes, or areas around you."
+      title: "Chat Naturally",
+      description: "Talk to me like a friend! Ask about places, mention your budget, preferences, or any requirements."
     },
     {
       icon: Map,
-      title: "See It on the Map",
-      description: "Get visual results with pins showing exactly where places are located."
+      title: "Get Smart Results",
+      description: "I'll remember what we talked about and help you narrow down options based on your needs."
     },
     {
       icon: Navigation,
-      title: "Get Directions",
-      description: "Tap any result to get more details and directions to your destination."
+      title: "Make Decisions",
+      description: "Ask follow-up questions like 'which is cheapest?' or 'what closes latest?' and I'll help you choose."
     }
   ];
 
